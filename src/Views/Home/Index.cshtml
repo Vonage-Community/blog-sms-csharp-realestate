@@ -1,0 +1,36 @@
+﻿@model sales_leads.Models.Lead
+
+<div class="row">
+    <div class="col-sm-8">
+        <h1>@ViewBag.Title</h1>
+        <h3>@ViewBag.Price</h3>
+        <img src="~/Content/Images/house.jpg" class="img-responsive" alt="House" />
+        <p>@ViewBag.Description</p>
+    </div>
+    <div class="col-sm-2">
+        <h4>Talk To A Real Estate Agent</h4>
+        <p>
+            A trained real estate professional is standing by to answer any
+            questions you might have about this property. Fill out the form below
+            with your contact information, and an agent will reach out soon.
+        </p>
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Michael Crump", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Phone)
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "+14253331111", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Message)
+                @Html.TextBoxFor(m => m.Message, new { @class = "form-control", required = "required" })
+            </div>
+            <button type="submit" class="btn btn-primary">Request Info</button>
+        }
+
+        <strong>@Html.DisplayFor(m => m.Result)</strong><br />
+    </div>
+</div>
