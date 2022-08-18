@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace sales_leads.Models
+namespace SalesLeads.Models
 {
     public class Lead
     {

@@ -1,4 +1,4 @@
-﻿namespace sales_leads.Domain
+﻿namespace SalesLeads.Domain
 {
     public class Credentials
     {

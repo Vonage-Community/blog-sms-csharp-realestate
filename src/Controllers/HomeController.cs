@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using sales_leads.Models;
+using SalesLeads.Models;
 using Vonage;
 using Vonage.Request;
 
-namespace sales_leads.Controllers
+namespace SalesLeads.Controllers
 {
     public class HomeController : Controller
     {
