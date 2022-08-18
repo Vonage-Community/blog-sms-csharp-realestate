@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "sales_leads": {
+    "SalesLeads": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
