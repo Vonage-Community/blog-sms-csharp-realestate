@@ -1,6 +1,6 @@
 # Vonage ASP.NET MVC Application and .NET 6.0 Sample
 
-This repository shows you how to use the Vonage SMS API with a real-world application using ASP.NET MVC Application and .NET 6.0. For more information, please see the blog post at [HERE]().
+This repository shows you how to use the Vonage SMS API with a real-world application using ASP.NET MVC Application and .NET 6.0. For more information, please see the blog post at [HERE](https://developer.vonage.com/en/blog/build-an-asp-net-mvc-app-to-send-sms-messages).
 
 * [Requirements](#requirements)
 * [Installation and Usage](#installation-and-usage)
