@@ -1,6 +1,6 @@
-# Vonage ASP.NET MVC Application and .NET 6.0 Sample
+# Vonage ASP.NET MVC Application and .NET 8.0 Sample
 
-This repository shows you how to use the Vonage SMS API with a real-world application using ASP.NET MVC Application and .NET 6.0. For more information, please see the blog post at [HERE](https://developer.vonage.com/en/blog/build-an-asp-net-mvc-app-to-send-sms-messages).
+This repository shows you how to use the Vonage SMS API with a real-world application using ASP.NET MVC Application and .NET 8.0. For more information, please see the blog post at [HERE](https://developer.vonage.com/en/blog/build-an-asp-net-mvc-app-to-send-sms-messages).
 
 * [Requirements](#requirements)
 * [Installation and Usage](#installation-and-usage)
@@ -17,7 +17,7 @@ This repository shows you how to use the Vonage SMS API with a real-world applic
 This application requires that you have the following installed locally:
 
 * [Visual Studio Community Edition or higher](https://visualstudio.microsoft.com/)
-* [Vonage .NET SDK 6.03 or higher](https://www.nuget.org/packages/Vonage/)
+* [Vonage .NET SDK 7.17.0 or higher](https://www.nuget.org/packages/Vonage/)
 
 Additionally, to test the application, you must have a Vonage account. You can create a Vonage account for free or manage your Vonage account details at the [Vonage Dashboard](https://developer.vonage.com).
 
@@ -35,7 +35,7 @@ As always, make sure not to commit your sensitive API credential data to any pub
 
 ### Setting the Phone Numbers
 
-You'll need to set the `To` and `From` phone numbers that the application uses. You can find this by going to the `Controllers` folder and editing line 33 and 34 in the `HomeController.cs` file. 
+You'll need to set the `To` and `From` phone numbers that the application uses. You can find this by going to the `Controllers` folder and editing the line in the `HomeController.cs` file. 
 
 ### Running the Application
 
