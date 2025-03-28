@@ -1,24 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>SalesLeads</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="wwwroot\Content\Images\house.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Vonage" Version="5.10.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="wwwroot\Content\Images\house.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <PackageReference Include="Vonage" Version="7.17.0" />
   </ItemGroup>
 
 </Project>

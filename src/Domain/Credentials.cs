@@ -2,10 +2,7 @@
 {
     public class Credentials
     {
-        public static string APIKey => "ENTER_API_KEY";
-
-        public static string APISecret => "ENTER_API_SECRET";
-
+        public static string APIKey => "API-KEY";
+        public static string APISecret => "API-SECRET";
     }
-
 }

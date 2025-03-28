@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SalesLeads.Models;
 using Vonage;
 using Vonage.Request;
@@ -7,15 +7,13 @@ namespace SalesLeads.Controllers
 {
     public class HomeController : Controller
     {
-
-        // GET: Home
         public ActionResult Index()
         {
             return this.View();
         }
 
         [HttpPost]
-        public ActionResult Index(Lead lead)
+        public async Task<ActionResult> Index(Lead lead)
         {
             string name = lead.Name;
             string phone = lead.Phone;
@@ -28,10 +26,10 @@ namespace SalesLeads.Controllers
 
             var VonageClient = new VonageClient(credentials);
 
-            var response = VonageClient.SmsClient.SendAnSms(new Vonage.Messaging.SendSmsRequest()
+            var response = await VonageClient.SmsClient.SendAnSmsAsync(new Vonage.Messaging.SendSmsRequest()
             {
-                To = "ENTER_PHONE_NUMBER",
-                From = "ENTER_PHONE_NUMBER",
+                To = "ENTER_A_PHONE_NUMBER",
+                From = "ENTER_A_PHONE_NUMBER",
                 Text = $"New lead acquired!\n\nName: {name}\nPhone: {phone}\nMessage: {message}"
             });
 
@@ -43,7 +41,7 @@ namespace SalesLeads.Controllers
             {
                 lead.Result = "Message Failure. Please try your request again. ";
             }
-            
+
             return this.View(lead);
         }
     }
