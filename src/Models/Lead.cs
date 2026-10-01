@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SalesLeads.Models
+namespace SalesLead.Models
 {
     public class Lead
     {
@@ -11,5 +11,6 @@ namespace SalesLeads.Models
         [Display(Name = "How can we help?")]
         public string Message { get; set; }
         public string Result { get; set; }
+
     }
 }
