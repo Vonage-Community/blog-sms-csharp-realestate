@@ -1,9 +1,10 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SalesLeads.Models;
+using SalesLead.Models;
 using Vonage;
 using Vonage.Request;
 
-namespace SalesLeads.Controllers
+namespace SalesLead.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,30 +20,42 @@ namespace SalesLeads.Controllers
             string phone = lead.Phone;
             string message = lead.Message;
 
-            var credentials = Credentials.FromApiKeyAndSecret(
-            Domain.Credentials.APIKey,
-            Domain.Credentials.APISecret
+            var credentials = Credentials.FromAppIdAndPrivateKeyPath(
+                Domain.Credentials.ApplicationId,
+                Domain.Credentials.PrivateKeyPath
             );
 
-            var VonageClient = new VonageClient(credentials);
+            var vonageClient = new VonageClient(credentials);
 
-            var response = await VonageClient.SmsClient.SendAnSmsAsync(new Vonage.Messaging.SendSmsRequest()
+            var request = new Vonage.Messages.Sms.SmsRequest
             {
-                To = "ENTER_A_PHONE_NUMBER",
-                From = "ENTER_A_PHONE_NUMBER",
+                To = "ENTER_YOUR_PHONE_NUMBER",
+                From = "ENTER_YOUR_LINKED_PHONE_NUMBER",
                 Text = $"New lead acquired!\n\nName: {name}\nPhone: {phone}\nMessage: {message}"
-            });
+            };
 
-            if (response != null && Convert.ToInt32(response.MessageCount) > 0 && response.Messages[0].StatusCode.ToString() == "Success")
+            try
             {
+                var response = await vonageClient.MessagesClient.SendAsync(request);
                 lead.Result = "Message sent successfully! An agent will contact you shortly.";
             }
-            else
+            catch (Exception)
             {
-                lead.Result = "Message Failure. Please try your request again. ";
+                lead.Result = "Message Failure. Please try your request again.";
             }
 
             return this.View(lead);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

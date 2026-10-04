@@ -1,4 +1,4 @@
-namespace SalesLeads.Models
+namespace SalesLead.Models
 {
     public class ErrorViewModel
     {

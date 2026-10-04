@@ -1,8 +1,9 @@
-﻿namespace SalesLeads.Domain
+﻿namespace SalesLead.Domain
 {
     public class Credentials
     {
-        public static string APIKey => "API-KEY";
-        public static string APISecret => "API-SECRET";
+        public static string ApplicationId => "ENTER_YOUR_APPLICATION_ID";
+        public static string PrivateKeyPath => "private.key";
     }
+
 }
